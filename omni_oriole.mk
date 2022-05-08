@@ -48,3 +48,7 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 #BOARD_BOOTCONFIG += androidboot.selinux=permissive
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+# HBM
+PRODUCT_COPY_FILES += \
+    device/google/raviole/permissions/permissions_com.android.hbmsvmanager.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/permissions_com.android.hbmsvmanager.xml
