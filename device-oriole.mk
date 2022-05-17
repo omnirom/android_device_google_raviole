@@ -306,3 +306,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Disable AVF Remote Attestation
 PRODUCT_AVF_REMOTE_ATTESTATION_DISABLED := true
+
+# HBM
+PRODUCT_PACKAGES += \
+    HbmSVManagerOverlay
