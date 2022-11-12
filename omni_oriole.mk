@@ -15,7 +15,7 @@
 #
 
 # must be before including vendor/omni
-DEVICE_PACKAGE_OVERLAYS += device/google/raviole/oriole/omni_overlay
+DEVICE_PACKAGE_OVERLAYS += device/google/raviole/oriole/overlay-omni
 
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
@@ -23,17 +23,25 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 TARGET_BOOTANIMATION_SIZE := 1080p
 
 $(call inherit-product, vendor/omni/config/common.mk)
-
-$(call inherit-product, device/google/gs101/aosp_common.mk)
-$(call inherit-product, device/google/raviole/device-oriole.mk)
+$(call inherit-product, device/google/gs101/device-omni.mk)
+$(call inherit-product, device/google/raviole/aosp_oriole.mk)
 
 PRODUCT_NAME := omni_oriole
-PRODUCT_DEVICE := oriole
-PRODUCT_MODEL := AOSP on Oriole
-PRODUCT_BRAND := Android
-PRODUCT_MANUFACTURER := Google
+PRODUCT_MODEL := Pixel 6
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=oriole \
+    PRIVATE_BUILD_DESC="oriole-user 13 TP1A.221105.002 9080065 release-keys"
+
+BUILD_FINGERPRINT := google/oriole/oriole:13/TP1A.221105.002/9080065:user/release-keys
+
+PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # for bringup to disable secure adb - copy adbkey.pub from ~/.android
 PRODUCT_ADB_KEYS := device/google/raviole/adbkey.pub
 PRODUCT_PACKAGES += \
     adb_keys
+
+# TODO
+BOARD_BOOTCONFIG += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
