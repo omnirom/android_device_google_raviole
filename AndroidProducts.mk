@@ -42,4 +42,5 @@ COMMON_LUNCH_CHOICES := \
     aosp_whitefin-userdebug \
     aosp_oriole-userdebug \
     aosp_raven-userdebug \
-    omni_oriole-userdebug
+    omni_oriole-userdebug \
+    omni_oriole-user
