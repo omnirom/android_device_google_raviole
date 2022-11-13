@@ -35,15 +35,16 @@ PRODUCT_SYSTEM_MANUFACTURER := Google
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="oriole-user 13 TP1A.221105.002 9080065 release-keys"
 
+# TODO - could use PRODUCT_OVERRIDE_FINGERPRINT
+# defined in vendor/google_devices/oriole/proprietary/BoardConfigVendor.mk
 BUILD_FINGERPRINT := google/oriole/oriole:13/TP1A.221105.002/9080065:user/release-keys
 
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # for bringup to disable secure adb - copy adbkey.pub from ~/.android
-PRODUCT_ADB_KEYS := device/google/raviole/adbkey.pub
-PRODUCT_PACKAGES += \
+#PRODUCT_ADB_KEYS := device/google/raviole/adbkey.pub
+#PRODUCT_PACKAGES += \
     adb_keys
 
-# TODO
-BOARD_BOOTCONFIG += androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+#BOARD_BOOTCONFIG += androidboot.selinux=permissive
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
