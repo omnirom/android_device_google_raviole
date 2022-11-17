@@ -52,3 +52,14 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # HBM
 PRODUCT_COPY_FILES += \
     device/google/raviole/permissions/permissions_com.android.hbmsvmanager.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/permissions_com.android.hbmsvmanager.xml
+
+PRODUCT_PACKAGES += \
+    HbmSVManagerOverlay
+
+# euicc from stock
+PRODUCT_COPY_FILES += \
+    device/google/raviole/permissions/permissions_com.google.android.euicc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/permissions_com.google.android.euicc.xml
+    
+# sysconfig from stock
+PRODUCT_COPY_FILES += \
+    device/google/raviole/product-sysconfig-stock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/product-sysconfig-stock.xml
