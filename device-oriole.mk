@@ -44,11 +44,6 @@ endif
 $(call soong_config_set,lyric,tuning_product,oriole)
 $(call soong_config_set,google3a_config,target_device,oriole)
 
-# sysconfig and permissions XML from stock
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/product-sysconfig-stock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/product-sysconfig-stock.xml \
-	$(LOCAL_PATH)/product-permissions-stock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/product-permissions-stock.xml
-
 # Init files
 PRODUCT_COPY_FILES += \
 	device/google/raviole/conf/init.raviole.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.raviole.rc \
@@ -246,7 +241,3 @@ endif
 # Device features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
-# HBM
-PRODUCT_PACKAGES += \
-    HbmSVManagerOverlay
