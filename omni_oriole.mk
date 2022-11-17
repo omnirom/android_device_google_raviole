@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# must be before including vendor/omni
-DEVICE_PACKAGE_OVERLAYS += device/google/raviole/oriole/overlay-omni
-
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
