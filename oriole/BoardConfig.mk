@@ -28,4 +28,4 @@ else
 
 endif
 
-include device/google/raviole/oriole/BoardConfig-omni.mk
+include device/google/oriole/BoardConfig-omni.mk
