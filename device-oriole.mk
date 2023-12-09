@@ -183,7 +183,7 @@ endif
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=63
+    ro.vendor.build.svn=73
 
 # Set support hide display cutout feature
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -193,6 +193,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
+
+# Android DeviceAsWebcam specific overlay
+PRODUCT_PACKAGES += \
+    DeviceAsWebcamOriole
 
 # SKU specific RROs
 PRODUCT_PACKAGES += \
@@ -274,10 +278,15 @@ else
 		device/google/raviole/location/gps_user.xml.oriole:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
 
-# Disable Settings large-screen optimization enabled by Window Extensions
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.settings.large_screen_opt.enabled=false
-
 # HBM
 PRODUCT_PACKAGES += \
     HbmSVManagerOverlay
+
+# Enable DeviceAsWebcam support
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.usb.uvc.enabled=true
+
+# Quick Start device-specific settings
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.quick_start.oem_id=00e0 \
+    ro.quick_start.device_id=oriole
