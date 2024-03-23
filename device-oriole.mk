@@ -300,10 +300,6 @@ else
 		device/google/raviole/location/gps_user.xml.oriole:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
 
-# HBM
-PRODUCT_PACKAGES += \
-    HbmSVManagerOverlay
-
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
