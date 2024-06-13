@@ -100,6 +100,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUBigClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "20000",
+        "3000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "GPUMinFreq",
       "Path": "/sys/devices/platform/1c500000.mali/hint_min_freq",
       "Values": [
